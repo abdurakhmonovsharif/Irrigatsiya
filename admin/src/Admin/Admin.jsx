@@ -9,9 +9,7 @@ const Admin = ({ user, setUser }) => {
     name: localStorage.getItem("c_n"),
     id: localStorage.getItem("c_i"),
   });
-  if (user === null) {
-    return <Navigate to="/login" />;
-  }
+
 
   return (
     <div className="admin"> 

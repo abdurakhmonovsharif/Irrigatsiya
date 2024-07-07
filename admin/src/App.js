@@ -8,9 +8,8 @@ import Settings from "./Settings/Settings";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 import {
-  Route,
+  Navigate,
   RouterProvider,
-  Routes,
   createBrowserRouter,
 } from "react-router-dom";
 import NotFound from "./NotFound";
@@ -21,11 +20,15 @@ function App() {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Admin user={user} setUser={setUser} />,
+      element:
+        user === null || user === undefined ? (
+          <Navigate to={"/login"} />
+        ) : (
+          <Admin user={user} setUser={setUser} />
+        ),
       children: [
         {
           path: "/sub-admins",
