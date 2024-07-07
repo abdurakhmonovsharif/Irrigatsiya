@@ -42,11 +42,11 @@ function App() {
     {
       path: "/not-found",
       element: <NotFound />,
-    }, {
+    },
+    {
       path: "*",
       element: <NotFound />,
     },
-
   ]);
   const networkError = () =>
     setTimeout(() => {
@@ -54,8 +54,8 @@ function App() {
         lang === "uz"
           ? "XATOLIK INTERNET UZILDI"
           : lang === "en"
-            ? "ERR INTERNET DISCONNECTED"
-            : lang === "ru" && "ОШИБКА ИНТЕРНЕТ ОТКЛЮЧЕН",
+          ? "ERR INTERNET DISCONNECTED"
+          : lang === "ru" && "ОШИБКА ИНТЕРНЕТ ОТКЛЮЧЕН",
         {
           className: "toast-error-container toast-error-container-after ",
         }
@@ -76,7 +76,6 @@ function App() {
     };
   }, []);
   !isOnline && networkError();
-
   return (
     <>
       <ToastContainer theme="light" autoClose={5000} rtl={false} />
