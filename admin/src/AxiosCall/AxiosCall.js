@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-export const BASE_URL = "https://sayt.tiiamebb.uz/api";
+export const BASE_URL = "https://sayt.tiiamebb.uz:9090/api";
 
 const AxiosCall = async (method, url, params) => {
   try {
